@@ -21,7 +21,7 @@ class Api::V1::WinesController < ApplicationController
     if @wine
       render json: @wine
     else
-      render json: @wine.errors
+      render json: @wine.errors, status: :unprocessable_entity
     end
   end
 
@@ -42,13 +42,18 @@ class Api::V1::WinesController < ApplicationController
     if @wine.save
       render json: @wine
     else
-      render json: @wine.errors
+      render json: @wine.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /beers/1
   # PATCH/PUT /beers/1.json
   def update
+    if @wine.update(beer_params)
+      render json: @wine
+    else
+      render json: @wine.errors, status: :unprocessable_entity
+    end
   end
 
   # DELETE /beers/1

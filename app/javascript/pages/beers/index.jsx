@@ -1,9 +1,9 @@
-import {message, Popconfirm, Table} from "antd";
+import {message, Popconfirm, Space, Table} from "antd";
 import {handleError} from "../../helper";
 import axiosInstance from "../../axiosInstance";
 import Layout from "../../components/Layout";
 import React, {useEffect, useState} from "react";
-import {useSearchParams,useNavigate,useLocation } from "react-router-dom";
+import {useSearchParams, useNavigate, useLocation} from "react-router-dom";
 import AddBeerModal from "../../components/AddBeerModal";
 
 
@@ -39,8 +39,8 @@ export default () => {
     };
 
     const onPageChangeHandler = (page, pageSize) => {
-        const searchParams =  new URLSearchParams(location.search)
-        searchParams.set('page',page.current)
+        const searchParams = new URLSearchParams(location.search)
+        searchParams.set('page', page.current)
         navigate(`${location.pathname}?${searchParams.toString()}`)
     }
 
@@ -81,12 +81,17 @@ export default () => {
             title: "",
             key: "action",
             render: (_text, record) => (
-                <Popconfirm title="Are you sure to delete this beer?" onConfirm={() => deleteBeer(record.id)}
-                            okText="Yes" cancelText="No">
-                    <a href="#" type="danger">
-                        Delete{" "}
-                    </a>
-                </Popconfirm>
+                <>
+                    <Space size={8}>
+                        <Popconfirm title="Are you sure to delete this beer?" onConfirm={() => deleteBeer(record.id)}
+                                    okText="Yes" cancelText="No">
+                            <a href="#" type="danger">
+                                Delete{" "}
+                            </a>
+                        </Popconfirm>
+                        <AddBeerModal reloadBeers={loadBeers} wine={record}/>
+                    </Space>
+                </>
             ),
         },
     ]
@@ -94,7 +99,11 @@ export default () => {
     return (
         <Layout>
             {loading ? <></> : (<Table rowKey="id" className="table-striped-rows" dataSource={beers} columns={columns}
-                                       pagination={{pageSize: meta.per_page,total:meta.total_entries,current:meta.current_page}} onChange={onPageChangeHandler}/>)}
+                                       pagination={{
+                                           pageSize: meta.per_page,
+                                           total: meta.total_entries,
+                                           current: meta.current_page
+                                       }} onChange={onPageChangeHandler}/>)}
             <AddBeerModal reloadBeers={loadBeers}/>
         </Layout>
     )
