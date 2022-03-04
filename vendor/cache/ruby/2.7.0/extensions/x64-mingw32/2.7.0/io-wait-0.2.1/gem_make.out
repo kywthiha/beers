@@ -1,0 +1,22 @@
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/io-wait-0.2.1/ext/io/wait
+C:/Ruby27-x64/bin/ruby.exe -I C:/Ruby27-x64/lib/ruby/2.7.0 -r ./siteconf20220304-8844-x2n6wi.rb extconf.rb
+checking for rb_io_wait()... no
+checking for rb_w32_ioctlsocket() in ruby.h... yes
+checking for rb_w32_is_socket() in ruby.h... yes
+creating Makefile
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/io-wait-0.2.1/ext/io/wait
+make "DESTDIR=" clean
+bash.exe: warning: could not find /tmp, please create!
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/io-wait-0.2.1/ext/io/wait
+make "DESTDIR="
+generating wait-x64-mingw32.def
+bash.exe: warning: could not find /tmp, please create!
+compiling wait.c
+linking shared-object io/wait.so
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/io-wait-0.2.1/ext/io/wait
+make "DESTDIR=" install
+bash.exe: warning: could not find /tmp, please create!
+/usr/bin/install -c -m 0755 wait.so ./.gem.20220304-8844-4x0a8f/io

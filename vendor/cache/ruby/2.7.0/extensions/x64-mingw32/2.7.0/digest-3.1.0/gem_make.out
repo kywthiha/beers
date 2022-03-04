@@ -1,0 +1,22 @@
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/digest-3.1.0/ext/digest/sha2
+C:/Ruby27-x64/bin/ruby.exe -I C:/Ruby27-x64/lib/ruby/2.7.0 -r ./siteconf20220304-8844-1b1lcd4.rb extconf.rb
+checking for u_int8_t... no
+checking for sys/cdefs.h... yes
+creating Makefile
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/digest-3.1.0/ext/digest/sha2
+make "DESTDIR=" clean
+bash.exe: warning: could not find /tmp, please create!
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/digest-3.1.0/ext/digest/sha2
+make "DESTDIR="
+generating sha2-x64-mingw32.def
+bash.exe: warning: could not find /tmp, please create!
+compiling sha2init.c
+compiling sha2.c
+linking shared-object digest/sha2.so
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/digest-3.1.0/ext/digest/sha2
+make "DESTDIR=" install
+bash.exe: warning: could not find /tmp, please create!
+/usr/bin/install -c -m 0755 sha2.so ./.gem.20220304-8844-79xamj/digest

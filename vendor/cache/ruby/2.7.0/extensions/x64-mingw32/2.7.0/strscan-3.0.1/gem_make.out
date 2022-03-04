@@ -1,0 +1,20 @@
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/strscan-3.0.1/ext/strscan
+C:/Ruby27-x64/bin/ruby.exe -I C:/Ruby27-x64/lib/ruby/2.7.0 -r ./siteconf20220304-8844-10uje9t.rb extconf.rb
+checking for onig_region_memsize() in ruby.h... yes
+creating Makefile
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/strscan-3.0.1/ext/strscan
+make "DESTDIR=" clean
+bash.exe: warning: could not find /tmp, please create!
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/strscan-3.0.1/ext/strscan
+make "DESTDIR="
+generating strscan-x64-mingw32.def
+bash.exe: warning: could not find /tmp, please create!
+compiling strscan.c
+linking shared-object strscan.so
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/strscan-3.0.1/ext/strscan
+make "DESTDIR=" install
+bash.exe: warning: could not find /tmp, please create!
+/usr/bin/install -c -m 0755 strscan.so ./.gem.20220304-8844-gtmiru

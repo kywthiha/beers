@@ -1,41 +1,62 @@
 import {message, Popconfirm, Table} from "antd";
-import {useEffect, useState} from "react";
 import {handleError} from "../../helper";
 import axiosInstance from "../../axiosInstance";
 import Layout from "../../components/Layout";
-import ReactDOM from 'react-dom'
+import React, {useEffect, useState} from "react";
+import {useSearchParams,useNavigate,useLocation } from "react-router-dom";
+import AddBeerModal from "../../components/AddBeerModal";
 
 
-export default function BeerIndex() {
+export default () => {
 
+    const [searchParams, setSearchParams] = useSearchParams();
+    const navigate = useNavigate();
     const [beers, setBeers] = useState([])
+    const [meta, setMeta] = useState(null)
+    const [loading, setLoading] = useState(true)
+    const location = useLocation();
 
     const loadBeers = async () => {
         try {
-            const res = await axiosInstance.get('/api/v1/wines')
-            setBeers(res.data.data)
+            const res = await axiosInstance.get(`/api/v1/wines?${searchParams.toLocaleString()}`)
+            setBeers(res.data.entries)
+            setMeta(res.data.meta)
         } catch (e) {
             handleError(e)
             message.error("Error: " + e)
         }
     }
 
-    const  deleteBeer = async (id) => {
-        try{
+    const deleteBeer = async (id) => {
+        try {
             const url = `api/v1/wines/${id}`;
             await axiosInstance.delete(url)
             await loadBeers()
-        }catch (e){
+        } catch (e) {
             handleError(e)
             message.error("Error: " + e)
         }
     };
 
+    const onPageChangeHandler = (page, pageSize) => {
+        const searchParams =  new URLSearchParams(location.search)
+        searchParams.set('page',page.current)
+        navigate(`${location.pathname}?${searchParams.toString()}`)
+    }
+
     useEffect(async () => {
+        setLoading(true)
         await Promise.all([loadBeers()])
-    }, [])
+        setLoading(false)
+        console.log(location)
+    }, [searchParams])
 
     const columns = [
+        {
+            title: "ID",
+            dataIndex: "id",
+            key: "id",
+        },
         {
             title: "Brand",
             dataIndex: "brand",
@@ -68,12 +89,13 @@ export default function BeerIndex() {
                 </Popconfirm>
             ),
         },
-    ];
+    ]
 
     return (
-       <Layout>
-           <Table className="table-striped-rows" dataSource={beers} columns={columns}
-                  pagination={{pageSize: 5}}/>
-       </Layout>
+        <Layout>
+            {loading ? <></> : (<Table rowKey="id" className="table-striped-rows" dataSource={beers} columns={columns}
+                                       pagination={{pageSize: meta.per_page,total:meta.total_entries,current:meta.current_page}} onChange={onPageChangeHandler}/>)}
+            <AddBeerModal reloadBeers={loadBeers}/>
+        </Layout>
     )
 }

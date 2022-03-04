@@ -1,0 +1,20 @@
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/debug-1.4.0/ext/debug
+C:/Ruby27-x64/bin/ruby.exe -I C:/Ruby27-x64/lib/ruby/2.7.0 -r ./siteconf20220304-8844-11dtsdm.rb extconf.rb
+creating Makefile
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/debug-1.4.0/ext/debug
+make "DESTDIR=" clean
+bash.exe: warning: could not find /tmp, please create!
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/debug-1.4.0/ext/debug
+make "DESTDIR="
+generating debug-x64-mingw32.def
+bash.exe: warning: could not find /tmp, please create!
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/debug-1.4.0/ext/debug
+make "DESTDIR=" install
+bash.exe: warning: could not find /tmp, please create!
+/usr/bin/install -c -m 0755 debug.so ./.gem.20220304-8844-xlc9ix/debug

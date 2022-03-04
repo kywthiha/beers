@@ -1,0 +1,19 @@
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/bootsnap-1.10.3/ext/bootsnap
+C:/Ruby27-x64/bin/ruby.exe -I C:/Ruby27-x64/lib/ruby/2.7.0 -r ./siteconf20220304-8844-dsy6mk.rb extconf.rb
+creating Makefile
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/bootsnap-1.10.3/ext/bootsnap
+make "DESTDIR=" clean
+bash.exe: warning: could not find /tmp, please create!
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/bootsnap-1.10.3/ext/bootsnap
+make "DESTDIR="
+generating bootsnap-x64-mingw32.def
+bash.exe: warning: could not find /tmp, please create!
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/bootsnap-1.10.3/ext/bootsnap
+make "DESTDIR=" install
+bash.exe: warning: could not find /tmp, please create!
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20220304-8844-1b2v8g1/bootsnap

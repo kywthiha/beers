@@ -1,0 +1,40 @@
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/msgpack-1.4.5/ext/msgpack
+C:/Ruby27-x64/bin/ruby.exe -I C:/Ruby27-x64/lib/ruby/2.7.0 -r ./siteconf20220304-8844-1obhkio.rb extconf.rb
+checking for ruby/st.h... yes
+checking for st.h... yes
+checking for rb_enc_interned_str() in ruby.h... no
+creating Makefile
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/msgpack-1.4.5/ext/msgpack
+make "DESTDIR=" clean
+bash.exe: warning: could not find /tmp, please create!
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/msgpack-1.4.5/ext/msgpack
+make "DESTDIR="
+generating msgpack-x64-mingw32.def
+bash.exe: warning: could not find /tmp, please create!
+compiling buffer.c
+compiling buffer_class.c
+compiling extension_value_class.c
+compiling factory_class.c
+compiling packer.c
+compiling packer_class.c
+compiling packer_ext_registry.c
+compiling rbinit.c
+compiling rmem.c
+compiling unpacker.c
+compiling unpacker_class.c
+unpacker_class.c: In function 'Unpacker_full_unpack':
+unpacker_class.c:381:43: warning: unknown conversion type character 'z' in format [-Wformat=]
+  381 |         rb_raise(eMalformedFormatError, "%zd extra bytes after the deserialized object", extra);
+      |                                           ^
+unpacker_class.c:381:41: warning: too many arguments for format [-Wformat-extra-args]
+  381 |         rb_raise(eMalformedFormatError, "%zd extra bytes after the deserialized object", extra);
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compiling unpacker_ext_registry.c
+linking shared-object msgpack/msgpack.so
+
+current directory: C:/railsprj/beer/vendor/cache/ruby/2.7.0/gems/msgpack-1.4.5/ext/msgpack
+make "DESTDIR=" install
+bash.exe: warning: could not find /tmp, please create!
+/usr/bin/install -c -m 0755 msgpack.so ./.gem.20220304-8844-1snic1d/msgpack
